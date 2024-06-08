@@ -1,12 +1,10 @@
-import { useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useEffect } from 'react'
 import './App.css'
 
 
 function App() {
   const tgApp = (window as any).Telegram.WebApp
-  const [count, setCount] = useState(0)
+  //const [count, setCount] = useState(0)
 
   useEffect(() => {
     tgApp.ready()
@@ -20,7 +18,7 @@ function App() {
     <>
       <div>
         hey
-        <button>Закрыть</button>
+        <button onClick={handleClose}>Закрыть</button>
       </div>
 
     </>
