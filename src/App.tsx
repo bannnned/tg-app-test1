@@ -14,10 +14,14 @@ function App() {
     tgApp.close()
   }
 
+  const userName = tgApp.initDataUnsafe?.user?.username
+
   return (
     <>
       <div>
         hey
+        {userName && <div><span className='username'>Привет, {userName}</span></div>}
+        
         <button onClick={handleClose}>Закрыть</button>
       </div>
 
