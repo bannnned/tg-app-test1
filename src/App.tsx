@@ -1,28 +1,19 @@
-import { useEffect } from 'react'
+import { useTgMethods } from '@/hooks'
 import './App.css'
 
 
 function App() {
-  const tgApp = (window as any).Telegram.WebApp
-  //const [count, setCount] = useState(0)
+    const {user, handleClose, handleToggleButton} = useTgMethods()
 
-  useEffect(() => {
-    tgApp.ready()
-  }, [])
-
-  const handleClose = () => {
-    tgApp.close()
-  }
-
-  const userName = tgApp.initDataUnsafe?.user?.username
+    const { userName } = user ?? {}
 
   return (
     <>
-      <div>
+      <div className='wrapper'>
         hey
         {userName && <div><span className='username'>Привет, {userName}</span></div>}
-        
         <button onClick={handleClose}>Закрыть</button>
+        <button onClick={handleToggleButton}>Toggle</button>
       </div>
 
     </>
