@@ -1,7 +1,8 @@
 import { useEffect } from "react"
 
 export const useTgMethods = () => {
-    const tgApp = (window as any).Telegram.WebApp
+  const tgApp = (window as any).Telegram?.WebApp
+  if (!tgApp) return
     //const [count, setCount] = useState(0)
   
     useEffect(() => {
